@@ -41,3 +41,21 @@ source install/setup.bash
 ros2 launch mmdet3d_ros2 mmdet3d_infer_launch.py
 ```
 ![](https://raw.githubusercontent.com/TonyTnT/picgo/main/202404252021818.gif)
+
+# Test
+with chroma
+
+## get your own llm(deepseek) api
+https://platform.deepseek.com/api_keys
+
+
+## start chromadb server
+``` 
+docker run --rm --name chroma -p 8000:8000 -v ./{PERSISTENT_PATH}:/chroma/chroma -e IS_PERSISTENT=TRUE -e ANONYMIZED_TELEMETRY=TRUE chromadb/chroma:latest
+```
+## run script
+```
+python3 test/test_langchain.py
+```
+
+![](https://raw.githubusercontent.com/TonyTnT/picgo/main/202405272004664.png)

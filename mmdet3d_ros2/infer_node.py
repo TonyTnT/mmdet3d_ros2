@@ -321,7 +321,7 @@ class InferNode(Node):
                     "bbox_yaw": float(yaw),
                 }
 
-                ids.append(f"id{ind}")
+                ids.append(f"mmdet3d_{ind}")
                 metadatas.append(metadata)
 
             class_names = [self.class_names[label] for label in labels.tolist()]
